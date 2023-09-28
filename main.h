@@ -8,12 +8,13 @@
 
 typedef struct files
 {
-    char *name; // name of the file (without path)
+    char name[50]; // name of the file (without path)
     char content[500];
     int size;
     time_t date;    
 } File;
 
 void create_file(File file[], int *file_count);
-void Display_file_detail(File file);
+void Display_file_detail(File *file);
+void print_list(File file[], int file_count);
 #endif
