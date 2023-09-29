@@ -1,0 +1,8 @@
+file1
+This is the first file
+22
+Fri Sep 29 22:36:47 2023
+file2
+THIS IS THE SECOND FILE
+23
+Fri Sep 29 22:38:22 2023

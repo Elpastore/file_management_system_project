@@ -4,21 +4,15 @@
 */
 int main(void)
 {
-    File file[100];
+    File file[MAX_FILES]; /*Array of structure*/
     int file_count = 0;
     int choice;
+    char file_name[] = "Data_info.txt";
 
     
     do
     {
-        printf("\nFile Management System\n");
-        printf("1. Create a new file\n");
-        printf("2. Read a file\n");
-        printf("3. Update a file\n");
-        printf("4. Delete a file\n");
-        printf("5. List all files\n");
-        printf("6. Exit\n");
-        printf("Choose an option: ");
+        menu();
         scanf("%d", &choice);
         switch (choice)
         {
@@ -28,11 +22,25 @@ int main(void)
         case 2:
             print_list(file, file_count);
             break;
+        case 3:
+            update_file(file, &file_count);
+            break;
+        case 4:
+            save_file(file, file_count, file_name);
+            break;
+        case 5:
+            list_all_files(file, file_count);
+        case 6:
+            load_file(file, &file_count, file_name);
+            break;
+        case 7:
+            printf("Exiting...\n");
+            break;
         default:
             printf("Invalid choice. Please try again.\n");
             break;
         }
-    } while (choice != 6);
+    } while (choice != 7);
     
     return (0);
 }
